@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <title>Komputery</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="baner"><img src="baner1.png"></div>
+            <div class="menu">
+                    <a href="index.html">Strona Główna</a>
+                    <a href="kontakt.html">Kontakt</a>  
+            </div>
+    </header>
+    <section>
+    <div class="blok2"><h3>Kontakt</h3>
+        <table>
+        <tr>
+            <td>Imię: <input type="text" name="imie" id="imie"></td>
+        </tr>
+        <tr>
+            <td>Nazwisko: <input type="text" name="nazwisko" id="nazwisko"></td>
+        </tr>
+        <tr>
+            <td>E-mail: <input type="text" name="email" id="email"></td>
+        </tr>
+        <tr>
+            <td>Zgłoszenie:
+                <select id="lista">
+                <option>naprawa komputerów</option>
+                <option>odzyskiwanie danych</option>
+                <option>wirusy</option>
+                <option>konfiguracja LAN</option>
+                </select>
+            </td>
+            </tr>
+            <tr>
+            <td><input type="checkbox" id="checkbox">wyślij kopię wiadomości</td>
+        </tr>
+        <tr>
+            <td><button onclick="smietnik()">czyść</button><button onclick="send()">Wyślij</button></td>
+        </tr>
+        </table>
+        <hr>
+        <div id="nazwa"></div>
+        <div id="email2"></div>
+        <div id="Zgłoszenie"></div>
+    </section>
+</body>
+<footer>Autor:<span>000000</span></footer>
+</div>
+<script>
+function smietnik(){
+        document.getElementById("nazwa").textContent = " ";
+        document.getElementById("email2").textContent = " ";
+        document.getElementById("Zgłoszenie").textContent = " ";
+
+        document.getElementById("imie").value = " ";
+        document.getElementById("nazwisko").value = " ";
+        document.getElementById("email").value = " ";
+        
+    }
+    function send(){
+        var imie = document.getElementById("imie").value;
+        var nazwisko = document.getElementById("nazwisko").value;
+        var email = document.getElementById("email").value;
+        option = document.getElementById("lista").value;
+        document.getElementById("nazwa").textContent = imie + "  " + nazwisko;
+        document.getElementById("email2").textContent = email.toLowerCase();
+        document.getElementById("Zgłoszenie").textContent = "Zgłoszenie: " + option;
+    }
+</script>
+</html>
